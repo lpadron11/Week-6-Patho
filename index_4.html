@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N3280 Study Tools</title>
+<style>
+  :root{
+    --ink:#14213D;
+    --artery:#A61C3C;
+    --vein:#2C4F73;
+    --pulse:#C9862B;
+    --bg:#FDFDFC;
+    --card:#F5F5F3;
+    --card-border:#E4E2DD;
+    --muted:#6B6B6B;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--bg);color:#232323;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    line-height:1.45;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 80px;}
+  h1{font-family:Georgia,"Times New Roman",serif;color:var(--ink);font-size:28px;margin:0 0 4px;}
+  p.sub{color:var(--muted);margin:0 0 28px;font-size:14px;}
+
+  .ecg-wrap{height:34px;margin:14px 0 28px;overflow:hidden;}
+  .ecg-wrap svg{width:100%;height:100%;display:block;}
+  .ecg-path{fill:none;stroke:var(--pulse);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:900;stroke-dashoffset:900;animation:draw 2.2s ease-out forwards;}
+  @media (prefers-reduced-motion: reduce){.ecg-path{animation:none;stroke-dashoffset:0;}}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+
+  .section-label{
+    font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+    font-weight:700;margin:28px 0 10px;
+  }
+  .card{
+    display:block;background:var(--card);border:1px solid var(--card-border);
+    border-radius:10px;padding:18px 20px;margin-bottom:12px;text-decoration:none;color:inherit;
+  }
+  .card:hover{border-color:var(--vein);}
+  .card .title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+  .card .desc{font-size:13.5px;color:var(--muted);}
+  .card .tagrow{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap;}
+  .tag{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:4px;font-weight:700;}
+  .tag.type1{background:#E3ECF3;color:var(--vein);}
+  .tag.type2{background:#F6E2E6;color:var(--artery);}
+
+  .placeholder{
+    border:1px dashed var(--card-border);border-radius:10px;padding:16px 20px;
+    color:var(--muted);font-size:13px;font-style:italic;
+  }
+  footer{color:var(--muted);font-size:12px;margin-top:36px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>N3280 Study Tools</h1>
+  <p class="sub">Self-contained study quizzes — Cal State LA, Summer 2026, ABSN Cohort 23</p>
+
+  <div class="ecg-wrap">
+    <svg viewBox="0 0 700 34" preserveAspectRatio="none">
+      <path class="ecg-path" d="M0,17 L70,17 L82,17 L88,7 L94,27 L100,3 L106,17 L118,17 L188,17 L200,17 L206,7 L212,27 L218,3 L224,17 L236,17 L306,17 L318,17 L324,7 L330,27 L336,3 L342,17 L354,17 L424,17 L436,17 L442,7 L448,27 L454,3 L460,17 L472,17 L542,17 L554,17 L560,7 L566,27 L572,3 L578,17 L590,17 L660,17 L672,17 L678,7 L684,27 L690,3 L696,17 L700,17"/>
+    </svg>
+  </div>
+
+  <div class="section-label">Week 6 — Cardiovascular (Ch. 25–27)</div>
+
+  <a class="card" href="week6-quiz.html">
+    <div class="title">CV Pathophysiology Study Quiz</div>
+    <div class="desc">~40 NCLEX-style questions with rationales, filterable by chapter and topic, plus a congenital heart defect comparison map.</div>
+    <div class="tagrow"><span class="tag type1">Concept quiz</span></div>
+  </a>
+
+  <a class="card" href="week6-question-bank.html">
+    <div class="title">CV Question Bank (Full Set)</div>
+    <div class="desc">126 questions pulled directly from the official question bank and answer key — multiple choice, select-all-that-apply, and fill-in-the-blank, with searchable rationales.</div>
+    <div class="tagrow"><span class="tag type2">Question bank</span></div>
+  </a>
+
+  <div class="section-label">Add more weeks here</div>
+  <div class="placeholder">
+    To add another quiz: upload its HTML file to this same repo, then copy one of the &lt;a class="card"&gt; blocks above, point the href at the new filename, and update the title/description.
+  </div>
+
+  <footer>N3280 · Dr. Gantioque · Understanding Pathophysiology, 7th ed. (Huether &amp; McCance)</footer>
+</div>
+</body>
+</html>
